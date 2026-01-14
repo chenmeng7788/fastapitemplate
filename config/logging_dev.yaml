@@ -1,0 +1,32 @@
+version: 1
+disable_existing_loggers: false
+
+formatters:
+  dev:
+    format: "%(asctime)s [%(levelname)s] %(name)s:%(lineno)d - %(message)s"
+    datefmt: "%Y-%m-%d %H:%M:%S"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: dev
+    stream: ext://sys.stdout
+
+loggers:
+  app:  # 项目自定义日志
+    level: DEBUG
+    handlers: [console]
+    propagate: false
+  uvicorn:  # uvicorn 日志（降低级别，减少噪音）
+    level: INFO
+    handlers: [console]
+    propagate: false
+  sqlalchemy:  # SQLAlchemy 日志（开发时可设为 DEBUG 看 SQL）
+    level: INFO
+    handlers: [console]
+    propagate: false
+
+root:
+  level: DEBUG
+  handlers: [console]

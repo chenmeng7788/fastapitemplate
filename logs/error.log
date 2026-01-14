@@ -1,0 +1,2 @@
+{"timestamp": "2025-11-04T16:29:53.008349", "level": "ERROR", "name": "app", "module": "users", "lineno": 17, "message": "Email already registered"}
+{"timestamp": "2025-11-04T16:32:23.721851", "level": "ERROR", "name": "app", "module": "users", "lineno": 17, "message": "Email already registered"}
